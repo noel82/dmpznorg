@@ -1,3 +1,40 @@
 # About
 
-My name is LB, I am a software developer based in Italy.  
+I am LB.  
+Class of 1982, I am a software developer.  
+While my friends were playing on game consoles, I was tinkering with BASIC on a Commodore 64.  
+I started working in 2003, first as employee in a network security company (working on Cisco appliances and client/server systems) then as developer. I was lucky enough, back in the 90s, to watch internet grow, through BBS (on a USRobotics 14400 modem), user groups and a lot of things as of today we don't own anymore.
+
+# Projects
+
+I need time to figure out all the crap I did, then I'll write it down here.
+
+# Books
+
+The following is a list of books I previosuly read; I will do my best to keep it updated. I hope to rearrange them in a better way as soon as possible.
+
+- Coders at work
+- Neuromancer
+- The Sprawl Trilogy
+- Cyberpunk
+- Mindf*ck
+- The Cathedral and The Bazaar
+- ANSI C
+- Advanced MS-DOS Programming 
+- The Whole Internet
+- Applied Operating Systems
+- Modern Operating Systems
+- Linux Command Line and Shell Scripting
+- Programming Perl
+- CGI Programming with Perl
+- Advanced Perl Programming
+- Web Client Programming with Perl
+- PHP: The Complete Reference
+- Advanced PHP Programming
+- Symfony 5: The Fast Track
+- The Object Oriented Thought Process
+- Code: The Hidden Language of Computer Hardware and Software
+- Clean Code
+- Code Complete  
+  
+(not complete...)

@@ -1,0 +1,19 @@
+Privacy Policy & Cookie Disclosure
+==================================
+
+This website is statically generated using [Sphinx](https://www.sphinx-doc.org/). 
+
+Use of Cookies
+--------------
+We do not use cookies, tracking pixels, local storage, or any similar tracking 
+technologies to monitor or profile your browsing behavior on this site. 
+
+Data Collection
+---------------
+Because this website consists entirely of static content, no personal data or 
+identifying information is requested, processed, or stored by this application.
+
+Third-Party Services
+--------------------
+This site does not load external assets, fonts, or third-party analytics scripts 
+that could drop cookies on your device without your explicit consent.
