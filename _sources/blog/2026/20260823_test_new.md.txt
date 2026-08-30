@@ -1,0 +1,12 @@
+---
+title: This is a new post
+author: admin
+date: 2026-08-23
+tags: personal, image
+---
+
+# How to insert an image
+
+This is an example of image sourced from file, in this case a screenshot of Mozilla Bonsai CVS application
+
+![](screen.png)

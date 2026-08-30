@@ -1,0 +1,178 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+[data-theme="light"] {
+    --color-bg: #FCFAEE;
+    --color-fg: #333333;
+    --color-link: #384B70;
+    --color-link-hover: #B8001F;
+    --color-navbar-bg: #384B70;
+    --color-navbar-fg: #FCFAEE;
+    --color-footer-bg: #384B70;
+    --color-heading-fg: #B8001F;
+    --color-highlight-pre-bg: lightyellow;
+    --color-highlight-pre-fg: #333;
+    --color-highlight-pre-border: brown;
+    --color-hightlight-pre-shadow: #d8d8d8;
+    --color-table-bg: #FCFAEE;
+    --color-table-fg: #333333;
+    --color-table-thead-bg: #eaeaea;
+    --color-table-caption-bg: #eaeaea;
+    --color-table-border: #333333;
+ }
+ 
+ [data-theme="dark"] {
+    --color-bg: #1f242d;
+    --color-fg: #CED6DD;
+    --color-link: #9fb9ed;
+    --color-link-hover: #FCFAEE;
+    --color-navbar-bg: #2c3441;
+    --color-navbar-fg: #CED6DD;
+    --color-footer-bg: #2c3441;
+    --color-heading-fg: #FCFAEE;
+    --color-highlight-pre-bg: #364151;
+    --color-highlight-pre-fg: #FCFAEE;
+    --color-highlight-pre-border: #6e7e9e;
+    --color-hightlight-pre-shadow: transparent;
+    --color-table-bg: #2c3441;
+    --color-table-fg: #CED6DD;
+    --color-table-thead-bg: #1f242d;
+    --color-table-caption-bg: #6e7e9e;
+    --color-table-border: #6e7e9e;
+}
+
+div.body h1,
+div.body h2,
+div.body h3,
+div.body h4,
+div.body h5,
+div.body h6 {
+    /* font-family: 'Times New Roman', Times, serif!important;
+    font-weight: bold; */
+    color: var(--color-heading-fg);
+    font-style: normal;
+}
+
+div.related[role='navigation'] .right:not(.nav-item) {
+    display: none;
+}
+
+div.related[role='navigation']{
+    background-color: var(--color-navbar-bg);
+    border-bottom: 2px solid var(--color-navbar-bg);
+    box-sizing: border-box;
+    color: var(--color-navbar-fg);
+}
+
+div.related[role='navigation'] a:hover {
+    background-color: #FCFAEE;
+    color: #B8001F;
+}
+
+div.related[role='navigation'] a {
+    text-decoration: underline;
+    color: var(--color-navbar-fg);
+    font-weight: normal;
+}
+
+div.related[role='navigation'] li.nav-item-this {
+    display: none;
+}
+
+div.footer {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--color-footer-bg);
+    color: #FCFAEE;
+    border-top: 2px solid var(--color-footer-bg);
+}
+
+body, div.body {
+    /*background-color: #FCFAEE;
+    color: #333;*/
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a, a:link, a:visited, a:active {
+    color: var(--color-link);
+    background-color: transparent;
+}
+
+a:link:hover, a:visited:hover {
+    color: var(--color-link-hover);
+    background-color: transparent;
+}
+
+a.no-style {
+    text-decoration: none!important;
+}
+
+section {
+    padding-bottom: 50px;
+    /*border-bottom: 2px solid #0f0;*/
+}
+
+div.sphinxsidebarwrapper {
+    border: 1px solid #384B70;
+}
+
+.admonition {
+    color: #333;
+}
+
+#searchbox {
+    padding-bottom: 20px;
+}
+
+.highlight {
+    background-color: transparent;
+}
+
+.highlight pre { 
+    background-color: var(--color-highlight-pre-bg)!important;
+    border: 1px solid var(--color-highlight-pre-border);
+    box-shadow: 1px 1px 1px var(--color-hightlight-pre-shadow); /* rgba(165, 42, 42, 0.4); */
+    width: fit-content;
+    padding: 5px 10px;
+    color: var(--color-highlight-pre-fg);
+}
+
+.document ~ .related[role='navigation'] {
+    visibility: hidden!important;
+}
+
+.epigraph {
+    font-style: italic;
+    padding: 1px 0px 1px 15px;
+    border-left: 5px solid #d8d8d8;
+}
+
+table.docutils {
+    border: 1px solid var(--color-table-border);
+    background-color: var(--color-table-bg);
+}
+
+table.docutils caption {
+    background-color: var(--color-table-caption-bg);
+    border: 1px solid var(--color-table-border);
+    padding: 5px 0px;
+    font-style: italic;
+}
+
+table.docutils th {
+    background-color: var(--color-table-thead-bg);
+    text-transform: uppercase;
+}
+
+table.docutils th, table.docutils td {
+    border: 1px solid var(--color-table-border);
+    padding: 2px 5px;
+}
+
+table.docutils th p, table.docutils td p {
+    margin: 2px 0px;
+}

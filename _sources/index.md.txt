@@ -1,0 +1,41 @@
+## Welcome to dmpzn.org
+
+Hello there! I'm thrilled you're here.
+
+This space is still under construction, but soon it will be filled with stories, projects, and passions that reflect who I am and what I love. 
+Whether you're here to learn more about me, explore my work, or just say hi—you're in the right place.
+
+Stay tuned, exciting things are on the way!
+
+Meanwhile, you can find some content to read, following the links below.
+
+
+<div style="float:left;width:33%">
+<h3>Recent posts</h3>
+
+```{toctree}
+:glob:
+:maxdepth: 2
+/blog/*
+```
+</div>
+
+<div style="float:left;width:33%">
+<h3>Help</h3>
+
+```{toctree}
+:glob:
+:maxdepth: 2
+/help/*
+```
+</div>
+
+<div style="float:left;width:33%">
+<h3>Microsoft Dynamics 365</h3>
+
+```{toctree}
+:glob:
+:maxdepth: 3
+/help/dynamics365/*
+```
+</div>

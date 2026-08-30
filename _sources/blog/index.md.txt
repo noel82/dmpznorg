@@ -1,0 +1,161 @@
+# Blog index
+# [How to insert an image](/blog/2026/20260823_test_new.md)
+*Posted on 2026-08-23 by admin*\
+*Tags: [personal](search:search.html?q=personal), [image](search:search.html?q=image)*
+
+&nbsp;
+
+
+
+This is an example of image sourced from file, in this case a screenshot of Mozilla Bonsai CVS application
+
+![](screen.png)
+
+
+---
+
+# [How to make another post](/blog/2025/202508013_test.md)
+*Posted on 2025-08-13 by admin*\
+*Tags: [personal](search:search.html?q=personal), [microsoft](search:search.html?q=microsoft), [dynamics365](search:search.html?q=dynamics365)*
+
+&nbsp;
+
+
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.sd
+
+![](https://placehold.co/600x400 "image title")
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+- item 1
+- item 2
+- item 3
+
+This is a table:
+
+:::{table} Table caption
+:width: 50%
+:align: center
+
+| foo | bar |
+| --- | --- |
+| baz | bim |
+| baz | bim |
+| baz | bim |
+| baz | bim |
+:::
+
+---
+
+# [How to solve a problem](/blog/2025/202508012_primopost.md)
+*Posted on 2025-08-12 by admin*\
+*Tags: [personal](search:search.html?q=personal), [microsoft](search:search.html?q=microsoft), [dynamics365](search:search.html?q=dynamics365)*
+
+&nbsp;
+
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+![Alt text](https://placehold.co/600x400 "a title")
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. asd
+
+- item 1
+- item 2
+- item 3
+
+This is a sample of php code:
+
+```php
+public function echo_something(string $something){
+    echo $something;
+}
+```
+
+This is a sample of python code:
+
+```python
+import os
+
+if __name__ == '__main__':
+    server = Server()
+    server.serve(root='../build/html')
+```
+
+This is an admonition:
+
+```{admonition} Admonition title
+:class: warning
+
+Here's admonition content
+```
+
+:::{note}
+And here's a note with a colon fence!
+:::
+
+```{epigraph}
+Here is a cool quotation.
+
+From me, Jo the Jovyan
+```
+
+
+---
+
+# [Old post](/blog/2024/202412012_oldpost.md)
+*Posted on 2024-12-12 by admin*
+
+
+&nbsp;
+
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+![Alt text](https://placehold.co/600x400 "a title")
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. asd
+
+- item 1
+- item 2
+- item 3
+
+This is a sample of php code:
+
+```php
+public function echo_something(string $something){
+    echo $something;
+}
+```
+
+This is a sample of python code:
+
+```python
+import os
+
+if __name__ == '__main__':
+    server = Server()
+    server.serve(root='../build/html')
+```
+
+This is an admonition:
+
+```{admonition} Admonition title
+:class: warning
+
+Here's admonition content
+```
+
+:::{note}
+And here's a note with a colon fence!
+:::
+
+```{epigraph}
+Here is a cool quotation.
+
+From me, Jo the Jovyan
+```
+
