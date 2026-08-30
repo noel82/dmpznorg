@@ -87,6 +87,7 @@ div.footer {
     background-color: var(--color-footer-bg);
     color: #FCFAEE;
     border-top: 2px solid var(--color-footer-bg);
+    font-size: 0.8em;
 }
 
 body, div.body {

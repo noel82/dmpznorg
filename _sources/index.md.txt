@@ -1,4 +1,4 @@
-## Welcome to dmpzn (or dumpzone)
+## Welcome to dmpzn.org
 
 Hello there, this space stands for my personal "dumpzone" and is still under construction!  
 Here you will find my [blog](blog/index.md), [projects](about.md) and more [about me](about.md). 
@@ -35,7 +35,6 @@ Stay tuned!
 /help/dynamics365/*
 ```
 </div>
-
 -->
 
 &nbsp;   
