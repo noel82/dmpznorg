@@ -38,5 +38,4 @@ Stay tuned!
 /help/dynamics365/*
 ```
 </div>
-
 -->
