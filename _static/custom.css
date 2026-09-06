@@ -16,6 +16,8 @@ html {
     --color-highlight-pre-fg: #333;
     --color-highlight-pre-border: brown;
     --color-hightlight-pre-shadow: #d8d8d8;
+   --color-highlight-pre-code-bg: lightyellow;
+    --color-highlight-pre-code-fg: #333;
     --color-table-bg: #FCFAEE;
     --color-table-fg: #333333;
     --color-table-thead-bg: #eaeaea;
@@ -36,6 +38,8 @@ html {
     --color-highlight-pre-fg: #FCFAEE;
     --color-highlight-pre-border: #6e7e9e;
     --color-hightlight-pre-shadow: transparent;
+    --color-highlight-pre-code-bg: #364151;
+    --color-highlight-pre-code-fg: #FCFAEE;
     --color-table-bg: #2c3441;
     --color-table-fg: #CED6DD;
     --color-table-thead-bg: #1f242d;
@@ -140,6 +144,11 @@ div.sphinxsidebarwrapper {
     width: fit-content;
     padding: 5px 10px;
     color: var(--color-highlight-pre-fg);
+}
+
+code {
+    background-color: var(--color-highlight-pre-code-bg);
+    color: var(--color-highlight-pre-code-fg);
 }
 
 .document ~ .related[role='navigation'] {
