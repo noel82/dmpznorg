@@ -5,7 +5,6 @@ Here you will find my [blog](blog/index.md), [projects](about.md) and more [abou
 
 Stay tuned!
 
-<!---
 <div style="float:left;width:33%">
 <h3>Recent posts</h3>
 
@@ -17,25 +16,10 @@ Stay tuned!
 </div>
 
 <div style="float:left;width:33%">
-<h3>Help</h3>
-
-```{toctree}
-:glob:
-:maxdepth: 2
-/help/*
-```
 </div>
 
 <div style="float:left;width:33%">
-<h3>Microsoft Dynamics 365</h3>
-
-```{toctree}
-:glob:
-:maxdepth: 3
-/help/dynamics365/*
-```
 </div>
--->
 
 &nbsp;   
 &nbsp;   

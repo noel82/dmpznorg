@@ -1,0 +1,59 @@
+---
+title: Toggle light-dark mode in macOS
+author: lbz
+date: 2026-09-06
+tags: blog, darkmode, ui, macos
+---
+
+# Toggle light-dark mode in macOS
+
+I use macOS and I always felt love-hate for the dark UI, because though it helps with my eyes I urge to keep certain apps in their main-original UI (I don't understand how people are able to use word processors or applications that involve printing in a dark environment - let's talk about highlighted text or font colors...).   
+  
+The first thing after setting app the dark mode on my macOS host is to toggle it to light mode for some apps. In case the app has built-in setting, I use the terminal to identify the id of the application I want to change, and then apply the change to the ```Info.plist``` system file. If you don't want to lose time on terminal there are apps that make this change easier to apply without tinkering with terminal and keys.
+
+
+In the following example I will refer to the TextEdit app (as of today, this works on my mac with Sequoia).  
+ 
+  
+First I get the id of the application (again, I will refer to TextEdit app):
+```bash
+$ osascript -e 'id of application "TextEdit"' 
+```
+
+The result will be the identifier string (in this case for the TextEdit app):  
+   
+```bash
+com.apple.TextEdit
+```
+   
+
+Then I use the returned string to set the new value for the system configuration key:  
+   
+```bash
+$ defaults write com.apple.TextEdit NSRequiresAquaSystemAppearance -boolean true
+```   
+
+The change will be written in the ```Info.plist``` file as:   
+
+```xml
+<key>NSRequiresAquaSystemAppearance</key>
+<true/>
+```
+
+Close and reopen the application to see the result.
+  
+
+To undo the change, the following command will remove the setting previously applied:  
+  
+```bash
+$ defaults delete com.apple.TextEdit NSRequiresAquaSystemAppearance
+```
+
+Instead of deleting the key, it could be set to _false_, the difference is that deleting the key will make it come back to the factory default state.   
+    
+  
+
+_<sup><sub>Disclaimer: Use this code at your own risk. I assume no responsibility or liability for any errors, omissions, or potential damages resulting from the use, misuse, or implementation of this code, including but not limited to system crashes, data loss, or security vulnerabilities.</sub></sup>_ 
+ 
+  
+ 

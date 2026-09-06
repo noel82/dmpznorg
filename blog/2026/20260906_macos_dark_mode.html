@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Toggle light-dark mode in macOS &#8212; title</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/traditional.css?v=f6356284" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5834d174" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/custom.js?v=d2b84c69"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+    <li class="nav-item"><a href="/" style="text-decoration: none;"><img src="../../_static/dmpzn-logo.gif" width="18" align="left" style="margin-right:10px" /> dmpzn.org</a></li>
+    <!-- 
+        <li class="nav-item nav-item-0"><a href="../../index.html">title</a> &#187;</li> -->
+
+        <li class="nav-item nav-item-this"><a href="">Toggle light-dark mode in macOS</a></li>    
+    <li class="nav-item right" style="margin-right: 10px;"><a class="no-style" title="Change theme (or press Ctrl+t on your keyboard)" href="#" data-theme-toggle aria-label=""></a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/blog/">Blog</a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/about.html">About</a></li>
+    <!--   --> 
+
+      </ul>
+    </div>
+    
+    
+    
+    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="toggle-light-dark-mode-in-macos">
+<h1>Toggle light-dark mode in macOS<a class="headerlink" href="#toggle-light-dark-mode-in-macos" title="Link to this heading">¶</a></h1>
+<em>Posted on: 2026-09-06 by lbz</em><br />
+<em>Tags: <a href="/search.html?q=blog">blog</a>, <a href="/search.html?q=darkmode">darkmode</a>, <a href="/search.html?q=ui">ui</a>, <a href="/search.html?q=macos">macos</a></em>
+<p>&nbsp;</p><p>I use macOS and I always felt love-hate for the dark UI, because though it helps with my eyes I urge to keep certain apps in their main-original UI (I don’t understand how people are able to use word processors or applications that involve printing in a dark environment - let’s talk about highlighted text or font colors…).</p>
+<p>The first thing after setting app the dark mode on my macOS host is to toggle it to light mode for some apps. In case the app has built-in setting, I use the terminal to identify the id of the application I want to change, and then apply the change to the <code class="docutils literal notranslate"><span class="pre">Info.plist</span></code> system file. If you don’t want to lose time on terminal there are apps that make this change easier to apply without tinkering with terminal and keys.</p>
+<p>In the following example I will refer to the TextEdit app (as of today, this works on my mac with Sequoia).</p>
+<p>First I get the id of the application (again, I will refer to TextEdit app):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osascript<span class="w"> </span>-e<span class="w"> </span><span class="s1">'id of application "TextEdit"'</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>The result will be the identifier string (in this case for the TextEdit app):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>com.apple.TextEdit
+</pre></div>
+</div>
+<p>Then I use the returned string to set the new value for the system configuration key:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.TextEdit<span class="w"> </span>NSRequiresAquaSystemAppearance<span class="w"> </span>-boolean<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>The change will be written in the <code class="docutils literal notranslate"><span class="pre">Info.plist</span></code> file as:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;key&gt;</span>NSRequiresAquaSystemAppearance<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;true/&gt;</span>
+</pre></div>
+</div>
+<p>Close and reopen the application to see the result.</p>
+<p>To undo the change, the following command will remove the setting previously applied:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>defaults<span class="w"> </span>delete<span class="w"> </span>com.apple.TextEdit<span class="w"> </span>NSRequiresAquaSystemAppearance
+</pre></div>
+</div>
+<p>Instead of deleting the key, it could be set to <em>false</em>, the difference is that deleting the key will make it come back to the factory default state.</p>
+<p><em><sup><sub>Disclaimer: Use this code at your own risk. I assume no responsibility or liability for any errors, omissions, or potential damages resulting from the use, misuse, or implementation of this code, including but not limited to system crashes, data loss, or security vulnerabilities.</sub></sup></em></p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Blog index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#toggle-light-dark-mode-in-macos"><span class="xref myst">Toggle light-dark mode in macOS</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#first-commit"><span class="xref myst">First commit</span></a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+    <li class="nav-item"><a href="/" style="text-decoration: none;"><img src="../../_static/dmpzn-logo.gif" width="18" align="left" style="margin-right:10px" /> dmpzn.org</a></li>
+    <!-- 
+        <li class="nav-item nav-item-0"><a href="../../index.html">title</a> &#187;</li> -->
+
+        <li class="nav-item nav-item-this"><a href="">Toggle light-dark mode in macOS</a></li>    
+    <li class="nav-item right" style="margin-right: 10px;"><a class="no-style" title="Change theme (or press Ctrl+t on your keyboard)" href="#" data-theme-toggle aria-label=""></a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/blog/">Blog</a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/about.html">About</a></li>
+    <!--   --> 
+
+      </ul>
+    </div>
+  <div class="footer" role="contentinfo">
+   dmpzn.org - <em><updtimestamp>Last updated on 2026-09-06</updtimestamp></em>
+  </div>
+
+  </body>
+</html>

@@ -15,7 +15,8 @@
     <script src="../_static/custom.js?v=d2b84c69"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to dmpzn.org" href="../index.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
@@ -23,14 +24,15 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to dmpzn.org"
+             accesskey="P">previous</a> |</li>
     <li class="nav-item"><a href="/" style="text-decoration: none;"><img src="../_static/dmpzn-logo.gif" width="18" align="left" style="margin-right:10px" /> dmpzn.org</a></li>
     <!-- 
         <li class="nav-item nav-item-0"><a href="../index.html">title</a> &#187;</li> -->
 
         <li class="nav-item nav-item-this"><a href="">Blog index</a></li>    
     <li class="nav-item right" style="margin-right: 10px;"><a class="no-style" title="Change theme (or press Ctrl+t on your keyboard)" href="#" data-theme-toggle aria-label=""></a></li>
-    <!--<li class="nav-item right">&nbsp; | &nbsp;</li>
-    <li class="nav-item right"><a href="/help/">Help</a></li>-->
     <li class="nav-item right">&nbsp; | &nbsp;</li>
     <li class="nav-item right"><a href="/blog/">Blog</a></li>
     <li class="nav-item right">&nbsp; | &nbsp;</li>
@@ -52,6 +54,40 @@
   <section id="blog-index">
 <h1>Blog index<a class="headerlink" href="#blog-index" title="Link to this heading">¶</a></h1>
 <p>&nbsp;</p></section>
+<section id="toggle-light-dark-mode-in-macos">
+<h1><a class="reference internal" href="2026/20260906_macos_dark_mode.html"><span class="std std-doc">Toggle light-dark mode in macOS</span></a><a class="headerlink" href="#toggle-light-dark-mode-in-macos" title="Link to this heading">¶</a></h1>
+<p><em>Posted on 2026-09-06 by lbz</em><br />
+<em>Tags: <a class="reference external" href="/search.html?q=blog">blog</a>, <a class="reference external" href="/search.html?q=darkmode">darkmode</a>, <a class="reference external" href="/search.html?q=ui">ui</a>, <a class="reference external" href="/search.html?q=macos">macos</a></em></p>
+<p> </p>
+<p>I use macOS and I always felt love-hate for the dark UI, because though it helps with my eyes I urge to keep certain apps in their main-original UI (I don’t understand how people are able to use word processors or applications that involve printing in a dark environment - let’s talk about highlighted text or font colors…).</p>
+<p>The first thing after setting app the dark mode on my macOS host is to toggle it to light mode for some apps. In case the app has built-in setting, I use the terminal to identify the id of the application I want to change, and then apply the change to the <code class="docutils literal notranslate"><span class="pre">Info.plist</span></code> system file. If you don’t want to lose time on terminal there are apps that make this change easier to apply without tinkering with terminal and keys.</p>
+<p>In the following example I will refer to the TextEdit app (as of today, this works on my mac with Sequoia).</p>
+<p>First I get the id of the application (again, I will refer to TextEdit app):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>osascript<span class="w"> </span>-e<span class="w"> </span><span class="s1">'id of application "TextEdit"'</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>The result will be the identifier string (in this case for the TextEdit app):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>com.apple.TextEdit
+</pre></div>
+</div>
+<p>Then I use the returned string to set the new value for the system configuration key:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.TextEdit<span class="w"> </span>NSRequiresAquaSystemAppearance<span class="w"> </span>-boolean<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>The change will be written in the <code class="docutils literal notranslate"><span class="pre">Info.plist</span></code> file as:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;key&gt;</span>NSRequiresAquaSystemAppearance<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;true/&gt;</span>
+</pre></div>
+</div>
+<p>Close and reopen the application to see the result.</p>
+<p>To undo the change, the following command will remove the setting previously applied:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>defaults<span class="w"> </span>delete<span class="w"> </span>com.apple.TextEdit<span class="w"> </span>NSRequiresAquaSystemAppearance
+</pre></div>
+</div>
+<p>Instead of deleting the key, it could be set to <em>false</em>, the difference is that deleting the key will make it come back to the factory default state.</p>
+<p><em><sup><sub>Disclaimer: Use this code at your own risk. I assume no responsibility or liability for any errors, omissions, or potential damages resulting from the use, misuse, or implementation of this code, including but not limited to system crashes, data loss, or security vulnerabilities.</sub></sup></em></p>
+</section>
+<hr class="docutils" />
 <section id="first-commit">
 <h1><a class="reference internal" href="2026/20260830_first_post.html"><span class="std std-doc">First commit</span></a><a class="headerlink" href="#first-commit" title="Link to this heading">¶</a></h1>
 <p><em>Posted on 2026-08-30 by lbz</em><br />
@@ -92,14 +128,15 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to dmpzn.org"
+             >previous</a> |</li>
     <li class="nav-item"><a href="/" style="text-decoration: none;"><img src="../_static/dmpzn-logo.gif" width="18" align="left" style="margin-right:10px" /> dmpzn.org</a></li>
     <!-- 
         <li class="nav-item nav-item-0"><a href="../index.html">title</a> &#187;</li> -->
 
         <li class="nav-item nav-item-this"><a href="">Blog index</a></li>    
     <li class="nav-item right" style="margin-right: 10px;"><a class="no-style" title="Change theme (or press Ctrl+t on your keyboard)" href="#" data-theme-toggle aria-label=""></a></li>
-    <!--<li class="nav-item right">&nbsp; | &nbsp;</li>
-    <li class="nav-item right"><a href="/help/">Help</a></li>-->
     <li class="nav-item right">&nbsp; | &nbsp;</li>
     <li class="nav-item right"><a href="/blog/">Blog</a></li>
     <li class="nav-item right">&nbsp; | &nbsp;</li>
