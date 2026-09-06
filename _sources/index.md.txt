@@ -10,8 +10,9 @@ Stay tuned!
 
 ```{toctree}
 :glob:
+:reversed:
 :maxdepth: 2
-/blog/*
+blog/**/*
 ```
 </div>
 

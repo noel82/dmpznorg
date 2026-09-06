@@ -8,6 +8,8 @@ tags: blog, darkmode, ui, macos
 # Toggle light-dark mode in macOS
 
 I use macOS and I always felt love-hate for the dark UI, because though it helps with my eyes I urge to keep certain apps in their main-original UI (I don't understand how people are able to use word processors or applications that involve printing in a dark environment - let's talk about highlighted text or font colors...).   
+
+<!-- more -->
   
 The first thing after setting app the dark mode on my macOS host is to toggle it to light mode for some apps. In case the app has built-in setting, I use the terminal to identify the id of the application I want to change, and then apply the change to the ```Info.plist``` system file. If you don't want to lose time on terminal there are apps that make this change easier to apply without tinkering with terminal and keys.
 
