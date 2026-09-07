@@ -7,11 +7,11 @@
     <link href="../../_static/favicon.png" sizes="32x32" rel="icon" type="image/png">
     <title>Toggle light-dark mode in macOS &#8212; Dumpzone</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/traditional.css?v=f6356284" />
+    <link rel="stylesheet" type="text/css" href="../../_static/traditional.css?v=608ddc6c" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4b99e034" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
-    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/custom.js?v=d2b84c69"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -74,7 +74,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.TextEdit<span class="w"> </span>NSRequiresAquaSystemAppearance<span class="w"> </span>-boolean<span class="w"> </span><span class="nb">true</span>
 </pre></div>
 </div>
-<p>The change will be written in the <code class="docutils literal notranslate"><span class="pre">Info.plist</span></code> file as:</p>
+<p>The change will be written in the <code class="docutils literal notranslate"><span class="pre">com.apple.TextEdit.plist</span></code> file as:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;key&gt;</span>NSRequiresAquaSystemAppearance<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;true/&gt;</span>
 </pre></div>
@@ -142,7 +142,7 @@
       </ul>
     </div>
   <div class="footer" role="contentinfo">
-   dmpzn.org - <em><updtimestamp>Last updated on 2026-09-06</updtimestamp></em>
+   dmpzn.org - <em><updtimestamp>Last updated on 2026-09-07</updtimestamp></em>
   </div>
 
   </body>

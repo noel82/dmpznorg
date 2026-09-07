@@ -35,7 +35,7 @@ Then I use the returned string to set the new value for the system configuration
 $ defaults write com.apple.TextEdit NSRequiresAquaSystemAppearance -boolean true
 ```   
 
-The change will be written in the ```Info.plist``` file as:   
+The change will be written in the ```com.apple.TextEdit.plist``` file as:   
 
 ```xml
 <key>NSRequiresAquaSystemAppearance</key>
