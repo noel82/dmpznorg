@@ -5,25 +5,16 @@ Here you will find my [blog](blog/index.md), [projects](about.md) and more [abou
 
 Stay tuned!
 
+&nbsp;   
 <div style="float:left;width:33%">
 <h3>Recent posts</h3>
 
-```{toctree}
-:glob:
-:reversed:
-:maxdepth: 2
-blog/**/*
+```{include} recent_posts.md
 ```
 </div>
 
-<div style="float:left;width:33%">
-</div>
+<div style="clear:both;margin-bottom:25px"></div>
 
-<div style="float:left;width:33%">
-</div>
-
-&nbsp;   
-&nbsp;   
 &nbsp;   
 &nbsp;   
 &nbsp;   
