@@ -6,13 +6,14 @@ Here you will find my [blog](blog/index.md), [projects](about.md) and more [abou
 Stay tuned!
 
 &nbsp;   
-<div style="float:left;width:33%">
+<div class="flex-container">
+<div class="flex-item">
 <h3>Recent posts</h3>
 
 ```{include} recent_posts.md
 ```
 </div>
-
+</div>
 <div style="clear:both;margin-bottom:25px"></div>
 
 &nbsp;   

@@ -186,3 +186,40 @@ table.docutils th, table.docutils td {
 table.docutils th p, table.docutils td p {
     margin: 2px 0px;
 }
+
+.document {
+    display: flex;
+    flex-direction: row;
+}
+
+.documentwrapper {
+    width: 70%;
+}
+
+.bodywrapper {
+    width: 100%;
+}
+ 
+.sphinxsidebar {
+    width:300px!important;
+    float: none!important;
+    margin-left: 0%!important;
+} 
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .document,.flex-container {
+    flex-direction: column;
+  }
+  .sphinxsidebar {
+    width: 100%!important;
+  }
+}
