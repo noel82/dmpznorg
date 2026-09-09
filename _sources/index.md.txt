@@ -25,4 +25,4 @@ Stay tuned!
 &nbsp;   
   
 _This website does not use cookies and does not collect any personal information.  
-Feel free to read the [privacy policy](privacy.md) and [cookie disclosure](privacy.md)_
+Feel free to read the [privacy policy](privacy.md) and [cookie disclosure](privacy.md)_.
