@@ -1,0 +1,29 @@
+---
+title: Users don't read. And software is no magic
+author: lbz
+date: 2026-09-16
+tags: blog, ai, software, users, rant
+---
+
+# Users don't read. And software is no magic.
+
+  
+Hundreds of studies have examined the dynamics of user interaction with digital tools (though some of these apply to other fields as well). [One such study](https://www.nngroup.com/articles/how-users-read-on-the-web), for example, conducted by the Nielsen Norman Group in 1997, explored how people read—or rather, scan—web pages to consume content.
+
+<!-- more -->
+
+Similar dynamics appear in the daily use of software, mobile apps, and web applications. In my experience—having frequent contact with end-users—the issue increasingly stems from a desire for immediate information processing: everything must happen quickly and with minimal effort, which over time leads to the misuse of available tools.  
+  
+For instance, no matter how well-designed a piece of software is, its impact varies from person to person; it inherently dictates a specific usage method, and if users stray from that path, they lose the ability to utilize the tool effectively.  
+  
+
+Personally, I believe this trend runs parallel to the—fortunately—growing democratization of IT over the last 30 years, yet it is accompanied by a decline in mindful usage. Without getting into the specifics of AI (please, don't even mention AI to me), digital transformation has rapidly placed powerful tools—both technical and otherwise—at the disposal of everyone (or nearly everyone).  
+  
+However, I feel we are quickly losing the approach rooted in the proper use and sharing of available tools.  
+  
+Today’s paradigm focuses on achieving goals not through foundational knowledge and the associated learning process—whether for software developers or end-users—but by leveraging the speed modern tools offer to build solutions in increasingly shorter timeframes.  
+  
+If all this will not be regulated or monitored, I have no doubt that situations and events—to put it mildly, unfavorable for everyone—could and will arise.  
+  
+The solution? Undoubtedly, an understanding of the tools being used and the underlying theory known to their creators, as well as sharing this kind of knowledge with others.  
+ 

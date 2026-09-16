@@ -1,4 +1,19 @@
 # Blog index
+# [Users don't read. And software is no magic.](/blog/2026/20260916_users_dont_read.md)
+*Posted on 2026-09-16 by lbz*\
+*Tags: [blog](search:search.html?q=blog), [ai](search:search.html?q=ai), [software](search:search.html?q=software), [users](search:search.html?q=users), [rant](search:search.html?q=rant)*
+
+&nbsp;
+
+
+
+  
+Hundreds of studies have examined the dynamics of user interaction with digital tools (though some of these apply to other fields as well). [One such study](https://www.nngroup.com/articles/how-users-read-on-the-web), for example, conducted by the Nielsen Norman Group in 1997, explored how people read—or rather, scan—web pages to consume content.
+
+[Continue reading...](/blog/2026/20260916_users_dont_read.md) 
+
+---
+
 # [Toggle light-dark mode in macOS](/blog/2026/20260906_macos_dark_mode.md)
 *Posted on 2026-09-06 by lbz*\
 *Tags: [blog](search:search.html?q=blog), [darkmode](search:search.html?q=darkmode), [ui](search:search.html?q=ui), [macos](search:search.html?q=macos)*
