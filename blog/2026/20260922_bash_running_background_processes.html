@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_static/favicon.png" sizes="32x32" rel="icon" type="image/png">
+    <title>Running background jobs in bash &#8212; Dumpzone</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/traditional.css?v=608ddc6c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6ef97379" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/custom.js?v=d2b84c69"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+    <li class="nav-item"><a href="/" style="text-decoration: none;"><img src="../../_static/dmpzn-logo.gif" width="18" align="left" style="margin-right:10px" /> dmpzn.org</a></li>
+   
+
+        <li class="nav-item nav-item-this"><a href="">Running background jobs in bash</a></li>    
+    <li class="nav-item right" style="margin-right: 10px;"><a class="no-style" title="Change theme (or press Ctrl+t on your keyboard)" href="#" data-theme-toggle aria-label=""></a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/blog/">Blog</a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/about.html">About</a></li>
+    <!--   --> 
+
+      </ul>
+    </div>
+    
+    
+    
+    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="running-background-jobs-in-bash">
+<h1>Running background jobs in bash<a class="headerlink" href="#running-background-jobs-in-bash" title="Link to this heading">¶</a></h1>
+<em>Posted on: 2026-09-22 by lbz</em><br />
+<em>Tags: <a href="/search.html?q=blog">blog</a>, <a href="/search.html?q=bash">bash</a>, <a href="/search.html?q=jobs">jobs</a>, <a href="/search.html?q=unix">unix</a>, <a href="/search.html?q=processes">processes</a>, <a href="/search.html?q=background">background</a></em>
+<p>&nbsp;</p><p>Let’s say you are connected via ssh to a unix machine with a running job and you need to end your session without stopping it. You can achieve this using <a class="reference external" href="https://web.mit.edu/gnu/doc/html/features_5.html">Job Control</a> to send it to background.</p>
+<!-- more -->
+<ol class="arabic simple">
+<li><p>CTRL + Z to suspend the running program</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jobs</span></code> gives you the list and the id of all current running jobs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bg</span> <span class="pre">%&lt;job_id&gt;</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">bg</span> <span class="pre">%1</span></code>) to make it resume in background</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disown</span> <span class="pre">-h</span> <span class="pre">%&lt;job_id&gt;</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">disown</span> <span class="pre">-h</span> <span class="pre">%1</span></code>) to prevent the job from being terminated at the end of the session; this command could also be executed before the former.</p></li>
+</ol>
+<p>In this case you will not be able to catch the output (stdout or stderr) of the program.</p>
+<p><strong>Some details</strong><br />
+<code class="docutils literal notranslate"><span class="pre">bg</span></code> works the same as you would resume the suspended job but restarting it  with the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.<br />
+<code class="docutils literal notranslate"><span class="pre">disown</span> <span class="pre">-h</span></code> marks a specific job so that it will not receive the SIGHUP (Signal Hang Up) signal when the session ends or the shell exits. From the manual <em>[…] Without options, each jobspec is removed from the table of active jobs. If the -h option is given, each jobspec is not removed from the table, but is marked so that SIGHUP is not sent to the job if the shell receives a SIGHUP […]</em></p>
+<p>Everything said could be avoided managing all from the beginning, before launching the program: for example using <code class="docutils literal notranslate"><span class="pre">nohup</span> <span class="pre">&lt;command&gt;</span></code> you achieve the same result of <code class="docutils literal notranslate"><span class="pre">disown</span></code> with the difference that the standard <code class="docutils literal notranslate"><span class="pre">nohup</span></code> command redirects all output (stdout and stderr) to a file called <code class="docutils literal notranslate"><span class="pre">nohup.out</span></code> (or using the standard redirection syntax to a specific file) - or better, using tools like <code class="docutils literal notranslate"><span class="pre">screen</span></code> or <code class="docutils literal notranslate"><span class="pre">tmux</span></code> to manage multiple active sessions.</p>
+<p><strong>Difference between a <code class="docutils literal notranslate"><span class="pre">job</span></code> and a <code class="docutils literal notranslate"><span class="pre">process</span></code></strong><br />
+A process is an execution unit managed by the operating system (OS) kernel, while a job is a collection of processes managed by the user’s command shell (e.g. bash or zsh).</p>
+<p><em><sup><sub>Disclaimer: Use this code at your own risk. I assume no responsibility or liability for any errors, omissions, or potential damages resulting from the use, misuse, or implementation of this code, including but not limited to system crashes, data loss, or security vulnerabilities.</sub></sup></em></p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../../index.html">Table of Contents</a></h3>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+    <li class="nav-item"><a href="/" style="text-decoration: none;"><img src="../../_static/dmpzn-logo.gif" width="18" align="left" style="margin-right:10px" /> dmpzn.org</a></li>
+   
+
+        <li class="nav-item nav-item-this"><a href="">Running background jobs in bash</a></li>    
+    <li class="nav-item right" style="margin-right: 10px;"><a class="no-style" title="Change theme (or press Ctrl+t on your keyboard)" href="#" data-theme-toggle aria-label=""></a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/blog/">Blog</a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/about.html">About</a></li>
+    <!--   --> 
+
+      </ul>
+    </div>
+  <div class="footer" role="contentinfo">
+   dmpzn.org - <em><updtimestamp>Last updated on 2026-09-22</updtimestamp></em>
+  </div>
+
+  </body>
+</html>

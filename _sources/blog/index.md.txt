@@ -1,4 +1,18 @@
 # Blog index
+# [Running background jobs in bash](/blog/2026/20260922_bash_running_background_processes.md)
+*Posted on 2026-09-22 by lbz*\
+*Tags: [blog](search:search.html?q=blog), [bash](search:search.html?q=bash), [jobs](search:search.html?q=jobs), [unix](search:search.html?q=unix), [processes](search:search.html?q=processes), [background](search:search.html?q=background)*
+
+&nbsp;
+
+
+
+Let’s say you are connected via ssh to a unix machine with a running job and you need to end your session without stopping it. You can achieve this using [Job Control](https://web.mit.edu/gnu/doc/html/features_5.html) to send it to background.
+
+[Continue reading...](/blog/2026/20260922_bash_running_background_processes.md) 
+
+---
+
 # [Users don't read. And software is no magic.](/blog/2026/20260916_users_dont_read.md)
 *Posted on 2026-09-16 by lbz*\
 *Tags: [blog](search:search.html?q=blog), [ai](search:search.html?q=ai), [software](search:search.html?q=software), [users](search:search.html?q=users), [rant](search:search.html?q=rant)*

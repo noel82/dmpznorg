@@ -2,6 +2,8 @@
 nosearch: true
 ---
 
+2026-09-22 - [Running background jobs in bash](/blog/2026/20260922_bash_running_background_processes.md)
+
 2026-09-16 - [Users don't read. And software is no magic.](/blog/2026/20260916_users_dont_read.md)
 
 2026-09-06 - [Toggle light-dark mode in macOS](/blog/2026/20260906_macos_dark_mode.md)

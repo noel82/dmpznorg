@@ -1,0 +1,44 @@
+---
+title: Running background jobs in bash
+author: lbz
+date: 2026-09-22
+tags: blog, bash, jobs, unix, processes, background
+---
+
+# Running background jobs in bash
+
+Let’s say you are connected via ssh to a unix machine with a running job and you need to end your session without stopping it. You can achieve this using [Job Control](https://web.mit.edu/gnu/doc/html/features_5.html) to send it to background.
+
+<!-- more -->
+  
+1. CTRL + Z to suspend the running program  
+2. `jobs` gives you the list and the id of all current running jobs   
+3. `bg %<job_id>` (e.g. `bg %1`) to make it resume in background  
+4. `disown -h %<job_id>` (e.g. `disown -h %1`) to prevent the job from being terminated at the end of the session; this command could also be executed before the former.  
+
+In this case you will not be able to catch the output (stdout or stderr) of the program.  
+  
+
+**Some details**  
+`bg` works the same as you would resume the suspended job but restarting it  with the `&`.      
+`disown -h` marks a specific job so that it will not receive the SIGHUP (Signal Hang Up) signal when the session ends or the shell exits. From the manual _[...] Without options, each jobspec is removed from the table of active jobs. If the -h option is given, each jobspec is not removed from the table, but is marked so that SIGHUP is not sent to the job if the shell receives a SIGHUP [...]_ 
+
+Everything said could be avoided managing all from the beginning, before launching the program: for example using `nohup <command>` you achieve the same result of `disown` with the difference that the standard `nohup` command redirects all output (stdout and stderr) to a file called `nohup.out` (or using the standard redirection syntax to a specific file) - or better, using tools like `screen` or `tmux` to manage multiple active sessions. 
+  
+  
+**Difference between a `job` and a `process`**  
+A process is an execution unit managed by the operating system (OS) kernel, while a job is a collection of processes managed by the user's command shell (e.g. bash or zsh).
+  
+  
+
+
+    
+  
+
+    
+  
+
+_<sup><sub>Disclaimer: Use this code at your own risk. I assume no responsibility or liability for any errors, omissions, or potential damages resulting from the use, misuse, or implementation of this code, including but not limited to system crashes, data loss, or security vulnerabilities.</sub></sup>_ 
+ 
+  
+ 
