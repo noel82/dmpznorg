@@ -1,4 +1,23 @@
 # Blog index
+# [Dive into osascript](/blog/2026/20261011_dive_into_osascript.md)
+*Posted on 2026-10-11 by lbz*\
+*Tags: [blog](search:search.html?q=blog), [osascript](search:search.html?q=osascript), [applescript](search:search.html?q=applescript), [macos](search:search.html?q=macos)*
+
+&nbsp;
+
+
+
+In a [previous post](20260906_macos_dark_mode.md) I used the command ```osascript``` to get the id of a MacOS application.  
+   
+But what is ```osascript```?  
+   
+The tool is basically an application that runs a compiled or plain text typed  (using the ```-e``` flag) AppleScript or JavaScript, or any OSA language.   
+
+
+[Continue reading...](/blog/2026/20261011_dive_into_osascript.md) 
+
+---
+
 # [Running background jobs in bash](/blog/2026/20260922_bash_running_background_processes.md)
 *Posted on 2026-09-22 by lbz*\
 *Tags: [blog](search:search.html?q=blog), [bash](search:search.html?q=bash), [jobs](search:search.html?q=jobs), [unix](search:search.html?q=unix), [processes](search:search.html?q=processes), [background](search:search.html?q=background)*

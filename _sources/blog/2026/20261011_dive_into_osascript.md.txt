@@ -1,0 +1,70 @@
+---
+title: Dive into osascript
+author: lbz
+date: 2026-10-11
+tags: blog, osascript, applescript, macos
+---
+
+# Dive into osascript
+
+In a [previous post](20260906_macos_dark_mode.md) I used the command ```osascript``` to get the id of a MacOS application.  
+   
+But what is ```osascript```?  
+   
+The tool is basically an application that runs a compiled or plain text typed  (using the ```-e``` flag) AppleScript or JavaScript, or any OSA language.   
+
+
+<!-- more -->
+
+Quoting the definition of [SS64 website](https://ss64.com/mac/osascript.html): 
+> _Execute AppleScripts and other OSA language scripts. Executes the given script file, or standard input if none is given. Scripts can be plain text or compiled scripts. osascript was designed for use with AppleScript, but will work with any Open Scripting Architecture (OSA) language._  
+  
+  
+With ```osascript``` it is possible to run a specific task or automation, here is an example using the AppleScript Syntax: let's open Spotify app   
+   
+```bash 
+osascript -e 'open app "Spotify"'
+```   
+   
+then play the selected track   
+   
+```bash
+osascript -e 'tell application "Spotify" to play'
+```  
+  
+and output informations about the current selected track   
+   
+```bash
+osascript -e 'tell application "Spotify"
+set trackName to name of current track
+set artistName to artist of current track
+set albumName to album of current track
+return trackName & " - " & artistName & " (" & albumName & ")"
+end tell'
+```   
+   
+Behind the scenes, the OSA defines a structural syntax for how scripts interact with the OS and individual applications. When a script is executed the OSA component compiles the code into underlying Apple Events and transmits them to target applications.  
+Applications, per se, expose their own terminology through scripting dictionaries, defined as ```.sdef``` files.   
+   
+For example, using ```sdef /Application/Spotify.app``` command (in this case XCode must be installed on the host) or ```cat /Applications/Spotify.app/Contents/Resources/Spotify.sdef``` you can view the dictionary available to be used for the scripting automation.   
+   
+Using AppleScript language takes us back to Apple origins of Hyperscript and HyperTalk, which are direct genetic descendants of the xTalk language family and use imperative, verbose and readable strings that mimic the human speech, avoiding general procedural calling styles in favour of a structured shape where you _target_ an object and _tell_ it to perform something.  
+  
+It is possible to save the above commands as alias shortcuts to use in prompts, automation scripts, or even inside other programs.  
+
+
+  
+  
+  
+  
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+  
+
+_<sup><sub>Disclaimer: Use this code at your own risk. I assume no responsibility or liability for any errors, omissions, or potential damages resulting from the use, misuse, or implementation of this code, including but not limited to system crashes, data loss, or security vulnerabilities.</sub></sup>_ 
+ 
+  
+ 

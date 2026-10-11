@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_static/favicon.png" sizes="32x32" rel="icon" type="image/png">
+    <title>Dive into osascript &#8212; Dumpzone</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/traditional.css?v=f6356284" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6ef97379" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/custom.js?v=d2b84c69"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+    <li class="nav-item"><a href="/" style="text-decoration: none;"><img src="../../_static/dmpzn-logo.gif" width="18" align="left" style="margin-right:10px" /> dmpzn.org</a></li>
+   
+
+        <li class="nav-item nav-item-this"><a href="">Dive into osascript</a></li>    
+    <li class="nav-item right" style="margin-right: 10px;"><a class="no-style" title="Change theme (or press Ctrl+t on your keyboard)" href="#" data-theme-toggle aria-label=""></a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/blog/">Blog</a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/about.html">About</a></li>
+    <!--   --> 
+
+      </ul>
+    </div>
+    
+    
+    
+    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dive-into-osascript">
+<h1>Dive into osascript<a class="headerlink" href="#dive-into-osascript" title="Link to this heading">¶</a></h1>
+<em>Posted on: 2026-10-11 by lbz</em><br />
+<em>Tags: <a href="/search.html?q=blog">blog</a>, <a href="/search.html?q=osascript">osascript</a>, <a href="/search.html?q=applescript">applescript</a>, <a href="/search.html?q=macos">macos</a></em>
+<p>&nbsp;</p><p>In a <a class="reference internal" href="20260906_macos_dark_mode.html"><span class="std std-doc">previous post</span></a> I used the command <code class="docutils literal notranslate"><span class="pre">osascript</span></code> to get the id of a MacOS application.</p>
+<p>But what is <code class="docutils literal notranslate"><span class="pre">osascript</span></code>?</p>
+<p>The tool is basically an application that runs a compiled or plain text typed  (using the <code class="docutils literal notranslate"><span class="pre">-e</span></code> flag) AppleScript or JavaScript, or any OSA language.</p>
+<!-- more -->
+<p>Quoting the definition of <a class="reference external" href="https://ss64.com/mac/osascript.html">SS64 website</a>:</p>
+<blockquote>
+<div><p><em>Execute AppleScripts and other OSA language scripts. Executes the given script file, or standard input if none is given. Scripts can be plain text or compiled scripts. osascript was designed for use with AppleScript, but will work with any Open Scripting Architecture (OSA) language.</em></p>
+</div></blockquote>
+<p>With <code class="docutils literal notranslate"><span class="pre">osascript</span></code> it is possible to run a specific task or automation, here is an example using the AppleScript Syntax: let’s open Spotify app</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>osascript<span class="w"> </span>-e<span class="w"> </span><span class="s1">'open app "Spotify"'</span>
+</pre></div>
+</div>
+<p>then play the selected track</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>osascript<span class="w"> </span>-e<span class="w"> </span><span class="s1">'tell application "Spotify" to play'</span>
+</pre></div>
+</div>
+<p>and output informations about the current selected track</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>osascript<span class="w"> </span>-e<span class="w"> </span><span class="s1">'tell application "Spotify"</span>
+<span class="s1">set trackName to name of current track</span>
+<span class="s1">set artistName to artist of current track</span>
+<span class="s1">set albumName to album of current track</span>
+<span class="s1">return trackName &amp; " - " &amp; artistName &amp; " (" &amp; albumName &amp; ")"</span>
+<span class="s1">end tell'</span>
+</pre></div>
+</div>
+<p>Behind the scenes, the OSA defines a structural syntax for how scripts interact with the OS and individual applications. When a script is executed the OSA component compiles the code into underlying Apple Events and transmits them to target applications.<br />
+Applications, per se, expose their own terminology through scripting dictionaries, defined as <code class="docutils literal notranslate"><span class="pre">.sdef</span></code> files.</p>
+<p>For example, using <code class="docutils literal notranslate"><span class="pre">sdef</span> <span class="pre">/Application/Spotify.app</span></code> command (in this case XCode must be installed on the host) or <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/Applications/Spotify.app/Contents/Resources/Spotify.sdef</span></code> you can view the dictionary available to be used for the scripting automation.</p>
+<p>Using AppleScript language takes us back to Apple origins of Hyperscript and HyperTalk, which are direct genetic descendants of the xTalk language family and use imperative, verbose and readable strings that mimic the human speech, avoiding general procedural calling styles in favour of a structured shape where you <em>target</em> an object and <em>tell</em> it to perform something.</p>
+<p>It is possible to save the above commands as alias shortcuts to use in prompts, automation scripts, or even inside other programs.</p>
+<p> 
+ 
+ 
+ </p>
+<p><em><sup><sub>Disclaimer: Use this code at your own risk. I assume no responsibility or liability for any errors, omissions, or potential damages resulting from the use, misuse, or implementation of this code, including but not limited to system crashes, data loss, or security vulnerabilities.</sub></sup></em></p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../../index.html">Table of Contents</a></h3>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+    <li class="nav-item"><a href="/" style="text-decoration: none;"><img src="../../_static/dmpzn-logo.gif" width="18" align="left" style="margin-right:10px" /> dmpzn.org</a></li>
+   
+
+        <li class="nav-item nav-item-this"><a href="">Dive into osascript</a></li>    
+    <li class="nav-item right" style="margin-right: 10px;"><a class="no-style" title="Change theme (or press Ctrl+t on your keyboard)" href="#" data-theme-toggle aria-label=""></a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/blog/">Blog</a></li>
+    <li class="nav-item right">&nbsp; | &nbsp;</li>
+    <li class="nav-item right"><a href="/about.html">About</a></li>
+    <!--   --> 
+
+      </ul>
+    </div>
+  <div class="footer" role="contentinfo">
+   dmpzn.org - <em><updtimestamp>Last updated on 2026-10-11</updtimestamp></em>
+  </div>
+
+  </body>
+</html>
