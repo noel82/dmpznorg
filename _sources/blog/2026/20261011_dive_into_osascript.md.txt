@@ -46,7 +46,7 @@ end tell'
 Behind the scenes, the OSA defines a structural syntax for how scripts interact with the OS and individual applications. When a script is executed the OSA component compiles the code into underlying Apple Events and transmits them to target applications.  
 Applications, per se, expose their own terminology through scripting dictionaries, defined as ```.sdef``` files.   
    
-For example, using ```sdef /Application/Spotify.app``` command (in this case XCode must be installed on the host) or ```cat /Applications/Spotify.app/Contents/Resources/Spotify.sdef``` you can view the dictionary available to be used for the scripting automation.   
+For example, using ```sdef /Application/Spotify.app``` command (in this case Xcode must be installed) or ```cat /Applications/Spotify.app/Contents/Resources/Spotify.sdef``` you can view the dictionary available to be used for the scripting automation.   
    
 Using AppleScript language takes us back to Apple origins of Hyperscript and HyperTalk, which are direct genetic descendants of the xTalk language family and use imperative, verbose and readable strings that mimic the human speech, avoiding general procedural calling styles in favour of a structured shape where you _target_ an object and _tell_ it to perform something.  
   
