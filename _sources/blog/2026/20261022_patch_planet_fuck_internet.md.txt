@@ -1,0 +1,36 @@
+---
+title: Patch the planet (and fuck the internet?) 
+author: lbz
+date: 2026-10-22
+tags: blog, php, bug, cve, ai, doomed
+---
+
+# Patch the planet (and fuck the internet?) 
+
+
+On October 21, 2026, emergency patches were released to fix two extremely serious security flaws located in the very core of PHP.
+The two vulnerabilities were independently discovered by the California-based security firm Calif as part of the OpenAI "Patch the Planet" project in August 2026, and by the Israeli-American cloud security company Wiz.   
+
+<!-- more -->
+
+First, I really struggle to read this last sentence, too many bad actors in the game: plus, let me say this, if there was a worthy cause, I don't think it went the way it was supposed to.   
+ 
+
+These vulnerabilities allow for an RCE (Remote Code Execution) attack and refer to how PHP handles web requests and internal memory. The problem lies within the C code in which PHP is written.   
+ 
+A technical analysis of each flaw is described everywhere at this point (some good sources for a detailed explanation: [here](https://www.php.net/archive/2026.php#2026-10-21-5), [here](https://www.crowdstrike.com/en-us/blog/crowdstrike-protects-customers-from-php-rce-zero-days) and [here](https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619).
+
+1. CVE-2026-109618: RCE via out-of-memory corruption
+
+2. CVE-2026-109619: RCE via stale global state 
+
+Why were these vulnerabilities so difficult to discover?    
+   
+Quoting the security researchers, these bugs had been present in PHP’s core code for decades, but chaining these events together demanded a level of mathematical precision that was virtually impossible for a human to achieve. So, why not throw months of prompts to AI models to find flaws that are impossible for a human to reproduce and spread the way to patch the planet? Maybe because we are in a situation where a kid could also make it using a prompt on a mobile phone? Really, I am worried. 
+
+   
+The use of advanced analysis artificial intelligence models lowered the barriers to mapping such complex memory behaviors.
+
+   
+As I said, aside from what seems to be a worthy cause, this scenario gives me chills about what will be the future of research. These flaws alone impact about 70% of the whole internet websites and applications, which are written in PHP, and which today are far more at risk, because the same models used to find these bugs are today in the hands of everyone.  
+

@@ -1,4 +1,20 @@
 # Blog index
+# [Patch the planet (and fuck the internet?)](/blog/2026/20261022_patch_planet_fuck_internet.md)
+*Posted on 2026-10-22 by lbz*\
+*Tags: [blog](search:search.html?q=blog), [php](search:search.html?q=php), [bug](search:search.html?q=bug), [cve](search:search.html?q=cve), [ai](search:search.html?q=ai), [doomed](search:search.html?q=doomed)*
+
+&nbsp;
+
+ 
+
+
+On October 21, 2026, emergency patches were released to fix two extremely serious security flaws located in the very core of PHP.
+The two vulnerabilities were independently discovered by the California-based security firm Calif as part of the OpenAI "Patch the Planet" project in August 2026, and by the Israeli-American cloud security company Wiz.   
+
+[Continue reading...](/blog/2026/20261022_patch_planet_fuck_internet.md) 
+
+---
+
 # [Dive into osascript](/blog/2026/20261011_dive_into_osascript.md)
 *Posted on 2026-10-11 by lbz*\
 *Tags: [blog](search:search.html?q=blog), [osascript](search:search.html?q=osascript), [applescript](search:search.html?q=applescript), [macos](search:search.html?q=macos)*
