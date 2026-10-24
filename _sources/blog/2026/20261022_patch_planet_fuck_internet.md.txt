@@ -13,7 +13,7 @@ The two vulnerabilities were independently discovered by the California-based se
 
 <!-- more -->
 
-First I really struggle to read this last sentence, too many bad actors in the game: plus, let me say this, if there was a worthy cause, I don't think it went the way it was supposed to.   
+First, I really struggle to read this last sentence, too many bad actors in the game: plus, let me say this, if there was a worthy cause, I don't think it went the way it was supposed to.   
  
 
 These vulnerabilities allow for an RCE (Remote Code Execution) attack and refer to how PHP handles web requests and internal memory. The problem lies within the C code in which PHP is written.   
