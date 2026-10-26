@@ -13,7 +13,7 @@ _Programming languages: C, C/AL, Perl, PHP, Blitz BASIC_
 I need time to figure out all the crap I did, then I'll write it down here.
 
 # Books
-The following is a list of books I previosuly read; I will do my best to keep it updated. I hope to rearrange them in a better way as soon as possible.
+The following is a list of books I read and recommend; I will do my best to keep it updated. I hope to rearrange them in a better way as soon as possible.
 
 - Coders at work
 - Neuromancer
