@@ -1,0 +1,42 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+.dedication{
+    color: black;
+    font-size: 22px;
+    font-style: italic;
+}
+.photo {
+    background-color: white;
+    padding: 10px 10px 10px;
+}
+#picture {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;    
+}
+#album {
+    max-width: 460px;
+}
+#postcard {
+    max-height: 700px;
+}
+#kiss {
+    height: 100vh;
+    background-color: white;
+    justify-content: center;
+    align-items: center;       
+}
+#iconplayer {
+    position:absolute;
+    top: 10px;
+    right: 10px;
+}
+#player {
+    position:absolute;
+    width: 350px;
+    bottom: 0;
+    left: calc(50vw - 175px);
+}
