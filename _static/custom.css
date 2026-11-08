@@ -8,9 +8,10 @@ html {
     --color-fg: #333333;
     --color-link: #384B70;
     --color-link-hover: #B8001F;
-    --color-navbar-bg: #384B70;
+    --color-link-visited: #551a8b;
+    --color-navbar-bg: #4d4545;
     --color-navbar-fg: #FCFAEE;
-    --color-footer-bg: #384B70;
+    --color-footer-bg: #4d4545;
     --color-heading-fg: #B8001F;
     --color-highlight-pre-bg: lightyellow;
     --color-highlight-pre-fg: #333;
@@ -23,17 +24,20 @@ html {
     --color-table-thead-bg: #eaeaea;
     --color-table-caption-bg: #eaeaea;
     --color-table-border: #333333;
+    --color-div-border: #cebebe;
+    --color-div-border-angle: #9a8787;
  }
  
  [data-theme="dark"] {
-    --color-bg: #1f242d;
+    --color-bg: #191919;
     --color-fg: #CED6DD;
     --color-link: #9fb9ed;
     --color-link-hover: #FCFAEE;
+    --color-link-visited: #8d94ba;
     --color-navbar-bg: #2c3441;
     --color-navbar-fg: #CED6DD;
     --color-footer-bg: #2c3441;
-    --color-heading-fg: #FCFAEE;
+    --color-heading-fg: #c2d4f1;
     --color-highlight-pre-bg: #364151;
     --color-highlight-pre-fg: #FCFAEE;
     --color-highlight-pre-border: #6e7e9e;
@@ -45,6 +49,8 @@ html {
     --color-table-thead-bg: #1f242d;
     --color-table-caption-bg: #6e7e9e;
     --color-table-border: #6e7e9e;
+    --color-div-border: #48556b;
+    --color-div-border-angle: #48556b;
 }
 
 div.body h1,
@@ -53,11 +59,22 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    /* font-family: 'Times New Roman', Times, serif!important;
-    font-weight: bold; */
+    font-family: "Courier New", "Courier", "Lucida Console", "Menlo", monospace !important;
     color: var(--color-heading-fg);
     font-style: normal;
+    font-weight: normal;
+    padding: 0px 20px;
+    text-transform: uppercase;
 }
+
+div.body p {
+    padding: 0px 20px;
+}
+
+div.body div[class^="highlight-"] {
+    margin: 20px;
+}
+
 
 div.related[role='navigation'] .right:not(.nav-item) {
     display: none;
@@ -97,14 +114,24 @@ div.footer {
 body, div.body {
     /*background-color: #FCFAEE;
     color: #333;*/
+    font-size: 13pt !important;
+    line-height: 16pt !important;
     background-color: var(--color-bg);
     color: var(--color-fg);
-    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: "Garamond", "Palatino", "Georgia", serif !important;
+    box-sizing: border-box !important;
+    letter-spacing: normal;
 }
 
-a, a:link, a:visited, a:active {
+a, a:link, a:active {
     color: var(--color-link);
     background-color: transparent;
+    text-decoration: none!important;
+}
+
+a:visited {
+    color: var(--color-link-visited);
 }
 
 a:link:hover, a:visited:hover {
@@ -122,8 +149,10 @@ section {
 }
 
 div.sphinxsidebarwrapper {
-    border: 1px solid #384B70;
+    /*border: 1px solid #384B70;*/
+    border: 0px!important;
 }
+
 
 .admonition {
     color: #333;
@@ -144,11 +173,13 @@ div.sphinxsidebarwrapper {
     width: fit-content;
     padding: 5px 10px;
     color: var(--color-highlight-pre-fg);
+    font-size: 10pt;
 }
 
 code {
     background-color: var(--color-highlight-pre-code-bg);
     color: var(--color-highlight-pre-code-fg);
+    font-size: 11pt;
 }
 
 .document ~ .related[role='navigation'] {
@@ -209,10 +240,76 @@ table.docutils th p, table.docutils td p {
 .flex-container {
   display: flex;
   flex-direction: row;
+  border-top: 1px solid var(--color-div-border) !important;
+  border-bottom: 1px solid var(--color-div-border) !important;
+  width: 100%;
 }
 
 .flex-item {
-  width: 100%;
+  width: 50%;
+  /*padding: 10px; */
+  border-right: 1px solid var(--color-div-border) !important;
+  box-sizing: border-box;
+}
+
+.flex-item.last {
+    border: 0px !important;
+}
+
+.body, [role="main"], article {
+    display: grid;
+    /* Force exactly 2 wide, equally split columns side-by-side */
+    grid-template-columns: 1fr; 
+    gap: 0;
+}
+
+.body div.section, 
+[role="main"] div.section, section {
+    border-right: 1px solid var(--color-div-border) !important;
+    border-bottom: 1px solid var(--color-div-border) !important;
+    /*padding: 10px 30px 30px 10px;*/
+    box-sizing: border-box;
+}
+
+div.sphinxsidebar {
+    border-bottom: 1px solid var(--color-div-border) !important;
+    box-sizing: border-box;
+}
+
+div.body, div.sphinxsidebar {
+    padding: 0px 0px 0px 0px;
+}
+
+blockquote, 
+blockquote div,
+.blockquote, div[class^="highlight"], div[class^="footer"], div.related {
+    --pixel-color: transparent !important;
+}
+
+div.body, div.body div, div.sphinxsidebar {
+    position: relative;
+    --pixel-size: 2px;      /* Set the physical size of each pixel block */
+    --pixel-color: var(--color-div-border-angle); /* Your light brown hue */
+}
+
+div.body::before, [role="main"] div::before, div.sphinxsidebar div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+    
+    width: var(--pixel-size);
+    height: var(--pixel-size);
+    background: var(--pixel-color);
+    
+    box-shadow: 
+        calc(var(--pixel-size) * 1) 0 0 var(--pixel-color),
+        calc(var(--pixel-size) * 2) 0 0 var(--pixel-color),
+        0 calc(var(--pixel-size) * 1) 0 var(--pixel-color),
+        calc(var(--pixel-size) * 1) calc(var(--pixel-size) * 1) 0 var(--pixel-color),
+        0 calc(var(--pixel-size) * 2) 0 var(--pixel-color);
 }
 
 @media (max-width: 800px) {
@@ -221,5 +318,8 @@ table.docutils th p, table.docutils td p {
   }
   .sphinxsidebar {
     width: 100%!important;
+  }
+  .flex-item {
+  width: 100%;
   }
 }

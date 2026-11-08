@@ -2,14 +2,14 @@
 nosearch: true
 ---
 
-2026-10-22 - [Patch the planet (and fuck the internet?)](/blog/2026/20261022_patch_planet_fuck_internet.md)
+22/10/2026 - [Patch the planet (and fuck the internet?)](/blog/2026/20261022_patch_planet_fuck_internet.md)
 
-2026-10-11 - [Dive into osascript](/blog/2026/20261011_dive_into_osascript.md)
+11/10/2026 - [Dive into osascript](/blog/2026/20261011_dive_into_osascript.md)
 
-2026-09-22 - [Running background jobs in bash](/blog/2026/20260922_bash_running_background_processes.md)
+22/09/2026 - [Running background jobs in bash](/blog/2026/20260922_bash_running_background_processes.md)
 
-2026-09-16 - [Users don't read. And software is no magic.](/blog/2026/20260916_users_dont_read.md)
+16/09/2026 - [Users don't read. And software is no magic.](/blog/2026/20260916_users_dont_read.md)
 
-2026-09-06 - [Toggle light-dark mode in macOS](/blog/2026/20260906_macos_dark_mode.md)
+06/09/2026 - [Toggle light-dark mode in macOS](/blog/2026/20260906_macos_dark_mode.md)
 
-2026-08-30 - [First commit](/blog/2026/20260830_first_post.md)
+30/08/2026 - [First commit](/blog/2026/20260830_first_post.md)

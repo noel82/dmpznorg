@@ -1,7 +1,7 @@
 ## Welcome to dmpzn.org
 
-Hello there, this space stands for my personal "dumpzone" and is still under construction!  
-Here you will find my [blog](blog/index.md), [projects](about.md) and more [about me](about.md). 
+Hello there, this space stands for my personal "dumpzone":  
+here you will find my [blog](blog/index.md), [projects](about.md) and more [about me](about.md). 
 
 Stay tuned!
 
@@ -13,6 +13,7 @@ Stay tuned!
 ```{include} recent_posts.md
 ```
 </div>
+<div class="flex-item last"></div>
 </div>
 <div style="clear:both;margin-bottom:25px"></div>
 

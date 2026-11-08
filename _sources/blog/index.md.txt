@@ -1,6 +1,6 @@
 # Blog index
 # [Patch the planet (and fuck the internet?)](/blog/2026/20261022_patch_planet_fuck_internet.md)
-*Posted on 2026-10-22 by lbz*\
+*Posted on 22/10/2026 by lbz*\
 *Tags: [blog](search:search.html?q=blog), [php](search:search.html?q=php), [bug](search:search.html?q=bug), [cve](search:search.html?q=cve), [ai](search:search.html?q=ai), [doomed](search:search.html?q=doomed)*
 
 &nbsp;
@@ -16,7 +16,7 @@ The two vulnerabilities were independently discovered by the California-based se
 ---
 
 # [Dive into osascript](/blog/2026/20261011_dive_into_osascript.md)
-*Posted on 2026-10-11 by lbz*\
+*Posted on 11/10/2026 by lbz*\
 *Tags: [blog](search:search.html?q=blog), [osascript](search:search.html?q=osascript), [applescript](search:search.html?q=applescript), [macos](search:search.html?q=macos)*
 
 &nbsp;
@@ -35,7 +35,7 @@ The tool is basically an application that runs a compiled or plain text typed  (
 ---
 
 # [Running background jobs in bash](/blog/2026/20260922_bash_running_background_processes.md)
-*Posted on 2026-09-22 by lbz*\
+*Posted on 22/09/2026 by lbz*\
 *Tags: [blog](search:search.html?q=blog), [bash](search:search.html?q=bash), [jobs](search:search.html?q=jobs), [unix](search:search.html?q=unix), [processes](search:search.html?q=processes), [background](search:search.html?q=background)*
 
 &nbsp;
@@ -49,7 +49,7 @@ Let’s say you are connected via ssh to a unix machine with a running job and y
 ---
 
 # [Users don't read. And software is no magic.](/blog/2026/20260916_users_dont_read.md)
-*Posted on 2026-09-16 by lbz*\
+*Posted on 16/09/2026 by lbz*\
 *Tags: [blog](search:search.html?q=blog), [ai](search:search.html?q=ai), [software](search:search.html?q=software), [users](search:search.html?q=users), [rant](search:search.html?q=rant)*
 
 &nbsp;
@@ -64,7 +64,7 @@ Hundreds of studies have examined the dynamics of user interaction with digital 
 ---
 
 # [Toggle light-dark mode in macOS](/blog/2026/20260906_macos_dark_mode.md)
-*Posted on 2026-09-06 by lbz*\
+*Posted on 06/09/2026 by lbz*\
 *Tags: [blog](search:search.html?q=blog), [darkmode](search:search.html?q=darkmode), [ui](search:search.html?q=ui), [macos](search:search.html?q=macos)*
 
 &nbsp;
@@ -78,7 +78,7 @@ I use macOS and I always felt love-hate for the dark UI, because though it helps
 ---
 
 # [First commit](/blog/2026/20260830_first_post.md)
-*Posted on 2026-08-30 by lbz*\
+*Posted on 30/08/2026 by lbz*\
 *Tags: [personal](search:search.html?q=personal), [blog](search:search.html?q=blog), [first](search:search.html?q=first)*
 
 &nbsp;
