@@ -1,5 +1,5 @@
 const now = new Date();
-const darkHour = 18;
+const darkHour = 16;
 const lightHour = 7;
 if (now.getHours() > darkHour || now.getHours() < lightHour) {
     document.getElementById('postcard').src = "street2.png";
