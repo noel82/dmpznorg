@@ -59,12 +59,13 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    font-family: "Courier New", "Courier", "Lucida Console", "Menlo", monospace !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    /* font-family: "Courier New", "Courier", "Lucida Console", "Menlo", monospace !important; */
     color: var(--color-heading-fg);
     font-style: normal;
     font-weight: bold;
     padding: 0px 20px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 div.body p {
@@ -85,6 +86,7 @@ div.related[role='navigation']{
     border-bottom: 2px solid var(--color-navbar-bg);
     box-sizing: border-box;
     color: var(--color-navbar-fg);
+    font-style: italic;
 }
 
 div.related[role='navigation'] a:hover {
@@ -118,8 +120,8 @@ body, div.body {
     line-height: 16pt !important;
     background-color: var(--color-bg);
     color: var(--color-fg);
-    /*font-family: Arial, Helvetica, sans-serif;*/
-    font-family: "Garamond", "Palatino", "Georgia", serif !important;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: "Garamond", "Palatino", "Georgia", serif !important; */
     box-sizing: border-box !important;
     letter-spacing: normal;
 }
@@ -141,6 +143,7 @@ a:link:hover, a:visited:hover {
 
 a.no-style {
     text-decoration: none!important;
+    font-style: normal;
 }
 
 section {
