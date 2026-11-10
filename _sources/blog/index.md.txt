@@ -13,7 +13,7 @@ The two vulnerabilities were independently discovered by the California-based se
 
 [Continue reading...](/blog/2026/20261022_patch_planet_fuck_internet.md) 
 
----
+ 
 
 # [Dive into osascript](/blog/2026/20261011_dive_into_osascript.md)
 *Posted on 11/10/2026 by lbz*\
@@ -32,7 +32,7 @@ The tool is basically an application that runs a compiled or plain text typed  (
 
 [Continue reading...](/blog/2026/20261011_dive_into_osascript.md) 
 
----
+ 
 
 # [Running background jobs in bash](/blog/2026/20260922_bash_running_background_processes.md)
 *Posted on 22/09/2026 by lbz*\
@@ -46,7 +46,7 @@ Let’s say you are connected via ssh to a unix machine with a running job and y
 
 [Continue reading...](/blog/2026/20260922_bash_running_background_processes.md) 
 
----
+ 
 
 # [Users don't read. And software is no magic.](/blog/2026/20260916_users_dont_read.md)
 *Posted on 16/09/2026 by lbz*\
@@ -61,7 +61,7 @@ Hundreds of studies have examined the dynamics of user interaction with digital 
 
 [Continue reading...](/blog/2026/20260916_users_dont_read.md) 
 
----
+ 
 
 # [Toggle light-dark mode in macOS](/blog/2026/20260906_macos_dark_mode.md)
 *Posted on 06/09/2026 by lbz*\
@@ -75,7 +75,7 @@ I use macOS and I always felt love-hate for the dark UI, because though it helps
 
 [Continue reading...](/blog/2026/20260906_macos_dark_mode.md) 
 
----
+ 
 
 # [First commit](/blog/2026/20260830_first_post.md)
 *Posted on 30/08/2026 by lbz*\
