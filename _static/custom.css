@@ -326,4 +326,46 @@ div.body::before, [role="main"] div::before, div.sphinxsidebar div::before {
   .flex-item {
     width: 100%;
   }
+  .body, [role="main"], article {
+    display: block !important; /* Forces layout back into standard block logic if grid minmax fails */
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .document, 
+  .documentwrapper, 
+  .bodywrapper, 
+  div.body {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .highlight pre {
+    width: inherit;
+  }
+
+  /* Force pygments highlighted span tags to break down at viewport bounds */
+  .highlight pre span, .highlight pre span.s1 {
+    white-space: inherit !important;
+    word-break: break-all !important;        /* Forces strict wrapping even inside long contiguous strings/tokens */
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+
+  span.pre {
+    word-wrap: anywhere !important;
+  }
+
+  .highlight .s1 {
+    word-break: break-all !important; /* Helpful for wrapping exceptionally long configuration paths */
+  }
+
 }
+
+
+
+
+
+
+
+
